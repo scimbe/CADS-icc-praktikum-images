@@ -7,8 +7,9 @@ RUN apk add --no-cache \
       bash curl jq \
       iproute2 iputils traceroute tcpdump \
       iperf3 bind-tools netcat-openbsd socat \
-      python3 py3-scapy \
-      ca-certificates
+      python3 py3-pip \
+      ca-certificates \
+ && pip install --no-cache-dir --break-system-packages scapy==2.6.1
 
 COPY lab/labsrv.py /opt/lab/labsrv.py
 
